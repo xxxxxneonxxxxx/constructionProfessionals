@@ -3,6 +3,8 @@
 async function initializeCatalog() {
   const audience = resolveAudience();
   applyAudience(audience);
+  const siteBasePath =
+    typeof window.TOK_BASE_PATH === "string" ? window.TOK_BASE_PATH : "";
 
   try {
     if (document.querySelector("#projects-list")) {
@@ -10,7 +12,7 @@ async function initializeCatalog() {
       if (root.dataset.serverRendered === "true") {
         bindProjectGalleryControls(root);
       } else {
-        const fallbackUrl = root.dataset.fallbackUrl || `/elektrika/data/projects-${audience}.json`;
+        const fallbackUrl = root.dataset.fallbackUrl || `${siteBasePath}/elektrika/data/projects-${audience}.json`;
         if (document.body.classList.contains("home-works-page")) {
           const response = await fetch(fallbackUrl);
           if (!response.ok) throw new Error("Project data unavailable");
@@ -26,7 +28,7 @@ async function initializeCatalog() {
         renderPrices(
           await fetchData(
             "/api/prices",
-            root.dataset.fallbackUrl || "/elektrika/data/prices.json",
+            root.dataset.fallbackUrl || `${siteBasePath}/elektrika/data/prices.json`,
             audience,
           ),
         );

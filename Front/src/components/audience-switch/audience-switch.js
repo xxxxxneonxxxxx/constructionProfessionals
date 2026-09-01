@@ -2,6 +2,13 @@
 
 const AUDIENCE_KEY = "tokAudience";
 const validAudiences = new Set(["consumer", "business"]);
+const siteBasePath =
+  typeof window.TOK_BASE_PATH === "string" ? window.TOK_BASE_PATH : "";
+
+function sitePath(path) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${siteBasePath}${normalized}`;
+}
 
 function escapeHtml(value = "") {
   return String(value).replace(
@@ -44,13 +51,13 @@ function applyAudience(audience) {
 
   document.querySelectorAll("[data-audience-home]").forEach((link) => {
     const sectionBase = document.body.hasAttribute("data-section-base")
-      ? document.body.dataset.sectionBase
-      : "/elektrika";
+      ? document.body.dataset.sectionBase || siteBasePath
+      : sitePath("/elektrika");
     link.href = isBusiness ? `${sectionBase}/business/` : `${sectionBase}/`;
   });
 
   document.querySelectorAll("[data-site-home]").forEach((link) => {
-    link.href = isBusiness ? "/business/" : "/";
+    link.href = isBusiness ? sitePath("/business/") : sitePath("/");
   });
 
   const content = isBusiness

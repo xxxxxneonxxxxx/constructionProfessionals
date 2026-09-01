@@ -97,6 +97,20 @@ production.
 - `npm run dev` собирает проект и запускает локальный сервер на порту 8000.
 - На хостинг нужно загружать содержимое папки `dist`.
 
+## GitHub Pages
+
+Репозиторий содержит workflow `.github/workflows/pages.yml`, который при каждом
+push в `main` собирает и публикует сайт по адресу:
+
+`https://xxxxxneonxxxxx.github.io/constructionProfessionals/`
+
+Для проектного адреса сборка использует `BASE_PATH=/constructionProfessionals`.
+Локальная команда `npm run build` по-прежнему создаёт сайт для корня `/`.
+
+Адрес Worker и публичный Turnstile key при необходимости задаются в GitHub:
+**Settings → Secrets and variables → Actions → Variables** под именами
+`TOK_API_BASE` и `TURNSTILE_SITE_KEY`.
+
 ## Варианты компонентов
 
 Сборщик создаёт две версии общих компонентов:

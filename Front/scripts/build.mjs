@@ -6,6 +6,22 @@ const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = join(projectRoot, "src");
 const outputRoot = join(projectRoot, "dist");
 
+function normalizeBasePath(value = "") {
+  const trimmed = String(value).trim();
+  if (!trimmed || trimmed === "/") return "";
+  return `/${trimmed.replace(/^\/+|\/+$/g, "")}`;
+}
+
+const basePath = normalizeBasePath(process.env.BASE_PATH);
+
+function prefixRootAttributes(html) {
+  if (!basePath) return html;
+  return html.replace(
+    /(\s[\w:-]+)=(['"])\/(?!\/)/g,
+    (_, attribute, quote) => `${attribute}=${quote}${basePath}/`,
+  );
+}
+
 const read = (path) => readFile(join(sourceRoot, path), "utf8");
 const readJson = async (path) => JSON.parse(await read(path));
 
@@ -618,7 +634,7 @@ const homeReviews = {
 async function build() {
   const generatedPageUrls = [];
   const turnstileSiteKey = process.env.TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
-  const apiBase = process.env.TOK_API_BASE || "http://localhost:8787/api";
+  const apiBase = process.env.TOK_API_BASE ?? "http://localhost:8787/api";
   const [layout, headerTemplate, footerTemplate, leadTemplate, cardTemplate, reviewsTemplate, tradeHomeTemplate, tradeWorksTemplate, tradePricesTemplate, homeTemplate, homeWorksTemplate] =
     await Promise.all([
       read("layouts/base.html"),
@@ -741,7 +757,7 @@ async function build() {
     });
     const destination = join(outputRoot, page.output);
     await mkdir(dirname(destination), { recursive: true });
-    await writeFile(destination, `${html.trim()}\n`);
+    await writeFile(destination, `${prefixRootAttributes(html).trim()}\n`);
     generatedPageUrls.push(outputToUrl(page.output));
   }
 
@@ -872,7 +888,7 @@ async function build() {
         });
         const destination = join(sectionRoot, page.output);
         await mkdir(dirname(destination), { recursive: true });
-        await writeFile(destination, `${html.trim()}\n`);
+        await writeFile(destination, `${prefixRootAttributes(html).trim()}\n`);
         generatedPageUrls.push(outputToUrl(`${section.slug}/${page.output}`));
       }
     }
@@ -1025,7 +1041,7 @@ async function build() {
     });
     const destination = join(outputRoot, page.output);
     await mkdir(dirname(destination), { recursive: true });
-    await writeFile(destination, `${html.trim()}\n`);
+    await writeFile(destination, `${prefixRootAttributes(html).trim()}\n`);
     generatedPageUrls.push(outputToUrl(page.output));
   }
 
@@ -1087,7 +1103,7 @@ async function build() {
     });
     const destination = join(outputRoot, output);
     await mkdir(dirname(destination), { recursive: true });
-    await writeFile(destination, `${html.trim()}\n`);
+    await writeFile(destination, `${prefixRootAttributes(html).trim()}\n`);
     generatedPageUrls.push(outputToUrl(output));
   }
 
@@ -1109,8 +1125,9 @@ Sitemap: ${siteUrl}/sitemap.xml
     writeFile(join(outputRoot, "robots.txt"), robots),
     writeFile(
       join(outputRoot, "config.js"),
-      `window.TOK_API_BASE = ${JSON.stringify(apiBase)};\nwindow.TOK_TURNSTILE_SITE_KEY = ${JSON.stringify(turnstileSiteKey)};\n`,
+      `window.TOK_API_BASE = ${JSON.stringify(apiBase)};\nwindow.TOK_TURNSTILE_SITE_KEY = ${JSON.stringify(turnstileSiteKey)};\nwindow.TOK_BASE_PATH = ${JSON.stringify(basePath)};\n`,
     ),
+    writeFile(join(outputRoot, ".nojekyll"), ""),
   ]);
   console.log(`Built ${generatedPageUrls.length} pages into ${outputRoot}`);
   if (!process.env.SITE_URL) {
