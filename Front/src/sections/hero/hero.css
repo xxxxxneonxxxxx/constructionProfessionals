@@ -1,0 +1,218 @@
+/* Главный экран */
+
+.hero {
+  padding: 32px 0 44px;
+}
+.hero-grid {
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.85fr);
+  gap: 40px;
+  align-items: stretch;
+}
+.hero-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 12px;
+}
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--yellow-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  max-width: 700px;
+  margin-bottom: 22px;
+  font-size: clamp(52px, 5.4vw, 78px);
+  line-height: 1.01;
+  letter-spacing: -0.06em;
+}
+h1 span {
+  color: var(--blue);
+}
+.hero-text {
+  max-width: 640px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.55;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.button {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.button-primary {
+  color: var(--white);
+  background: var(--blue);
+}
+.button-primary:hover {
+  background: #111d35;
+}
+.button-accent {
+  color: var(--ink);
+  background: var(--yellow);
+}
+.text-link {
+  font-size: 14px;
+  font-weight: 800;
+}
+.text-link span {
+  color: var(--yellow-dark);
+}
+.hero-facts {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 36px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+.hero-facts li {
+  min-width: 0;
+}
+.hero-facts strong,
+.hero-facts span {
+  display: block;
+}
+.hero-facts strong {
+  margin-bottom: 8px;
+  color: var(--blue);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+.hero-facts strong::after {
+  width: 30px;
+  height: 3px;
+  display: block;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--yellow);
+  content: "";
+}
+.hero-facts span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.hero-media {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #dfe3e8;
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 21, 45, 0.36));
+}
+.hero-badge {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(27, 42, 74, 0.9);
+  font-size: 12px;
+  font-weight: 700;
+}
+.hero-badge span {
+  color: var(--yellow);
+}
+
+/* Главный экран с вырезанной фигурой мастера */
+
+.consumer-page {
+  overflow-x: clip;
+}
+
+.consumer-page .hero {
+  position: relative;
+  z-index: 2;
+}
+
+.consumer-page .hero-grid {
+  min-height: 620px;
+}
+
+.hero-media.hero-person {
+  min-height: 620px;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+.hero-media.hero-person::after {
+  display: none;
+}
+
+.hero-media.hero-person img {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: -44px;
+  width: auto;
+  max-width: none;
+  height: 680px;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 24px 28px rgba(17, 29, 53, 0.2));
+}
+
+.trade-page .hero {
+  overflow: hidden;
+}
+
+.trade-page .hero-media.hero-person img,
+.home-page .hero-media.hero-person img {
+  bottom: -548px;
+  height: 1200px;
+}
+
+.home-page .hero {
+  overflow: hidden;
+}
+
+.hero-media.hero-person .hero-badge {
+  z-index: 3;
+  right: 4px;
+  bottom: 8px;
+}
+
+.consumer-page .section-dark {
+  position: relative;
+  z-index: 1;
+}

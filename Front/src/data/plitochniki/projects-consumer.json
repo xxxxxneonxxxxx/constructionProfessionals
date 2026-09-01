@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ukladka-plitki-vannaya",
+    "type": "Квартира",
+    "title": "Укладка плитки в ванной комнате",
+    "summary": "Подготовили основание, выполнили раскладку и аккуратно уложили плитку с ровными швами.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-do-remonta-tomsk.png",
+        "alt": "Ванная комната до укладки плитки в Томске",
+        "stage": "before"
+      },
+      {
+        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-posle-remonta-tomsk.png",
+        "alt": "Ванная комната после укладки плитки в Томске",
+        "stage": "after"
+      }
+    ],
+    "workItems": [
+      "Подготовили и выровняли основание",
+      "Согласовали раскладку плитки",
+      "Уложили плитку с ровными швами",
+      "Выполнили затирку и очистили поверхность"
+    ]
+  }
+]

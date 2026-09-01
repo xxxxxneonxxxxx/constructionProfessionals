@@ -1,0 +1,258 @@
+/* Единая система плавных переходов и микроанимаций */
+
+:root {
+  --motion-fast: 180ms;
+  --motion-base: 320ms;
+  --motion-slow: 680ms;
+  --motion-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-spring: cubic-bezier(0.2, 0.8, 0.2, 1.12);
+}
+
+.motion-enabled .motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity var(--motion-slow) var(--motion-ease),
+    transform var(--motion-slow) var(--motion-ease);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-enabled .motion-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.hero-media.motion-reveal {
+  transform: translate3d(28px, 0, 0) scale(0.985);
+}
+
+.hero-media.motion-reveal.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.button,
+.text-link,
+.all-prices,
+.back-link,
+.header-phone,
+.footer-row > a,
+.floating-call,
+.slider-button {
+  transition:
+    color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    box-shadow var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-spring);
+}
+
+.button {
+  position: relative;
+}
+
+.button,
+.floating-call {
+  overflow: hidden;
+}
+
+.button::after,
+.floating-call::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.24) 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform 620ms var(--motion-ease);
+}
+
+.direction-card,
+.expert-card,
+.advantages-grid article,
+.review,
+.project-case,
+.price-category,
+.contact-card {
+  transition:
+    transform var(--motion-base) var(--motion-ease),
+    border-color var(--motion-base) ease,
+    background-color var(--motion-base) ease,
+    box-shadow var(--motion-base) var(--motion-ease);
+}
+
+.direction-card::after,
+.expert-card::after {
+  transform-origin: right center;
+  transition: width var(--motion-base) var(--motion-ease);
+}
+
+.direction-card > span,
+.advantages-grid article > span,
+.price-category-heading > span,
+.logo-mark {
+  transition: transform var(--motion-base) var(--motion-spring);
+}
+
+.direction-card i,
+.text-link span,
+.all-prices span,
+.work-more-arrow,
+.footer-audience-link span {
+  display: inline-block;
+  transition: transform var(--motion-base) var(--motion-spring);
+}
+
+.work-card-image,
+.project-slide {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.work-card img,
+.project-slide img,
+.hero-media img {
+  transition:
+    transform 720ms var(--motion-ease),
+    filter var(--motion-base) ease;
+}
+
+.work-more-card {
+  transition:
+    transform var(--motion-base) var(--motion-ease),
+    background-color var(--motion-base) ease,
+    box-shadow var(--motion-base) var(--motion-ease);
+}
+
+.catalog-price-row,
+.price-list div,
+.more-prices div {
+  transition:
+    color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    padding var(--motion-base) var(--motion-ease);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  transition:
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    box-shadow var(--motion-base) ease,
+    transform var(--motion-fast) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover,
+  .floating-call:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(27, 42, 74, 0.2);
+  }
+
+  .button:hover::after,
+  .floating-call:hover::after {
+    transform: translateX(130%);
+  }
+
+  .text-link:hover span,
+  .all-prices:hover span,
+  .footer-audience-link:hover span {
+    transform: translateX(5px);
+  }
+
+  .back-link:hover {
+    color: var(--ink);
+    transform: translateX(-4px);
+  }
+
+  .logo:hover .logo-mark {
+    transform: rotate(-8deg) scale(1.07);
+  }
+
+  .direction-card:hover,
+  .expert-card:hover,
+  .review:hover,
+  .price-category:hover {
+    transform: translateY(-7px);
+    border-color: rgba(27, 42, 74, 0.18);
+    box-shadow: 0 26px 58px rgba(27, 42, 74, 0.13);
+  }
+
+  .direction-card:hover::after,
+  .expert-card:hover::after {
+    width: 52%;
+  }
+
+  .direction-card:hover > span,
+  .advantages-grid article:hover > span,
+  .price-category:hover .price-category-heading > span {
+    transform: scale(1.08) rotate(-5deg);
+  }
+
+  .direction-card:hover i {
+    transform: translate(4px, -4px);
+  }
+
+  .advantages-grid article:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 193, 7, 0.52);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 22px 45px rgba(9, 18, 38, 0.18);
+  }
+
+  .project-case:hover,
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 64px rgba(27, 42, 74, 0.13);
+  }
+
+  .work-card:hover img,
+  .project-slide:hover img {
+    transform: scale(1.035);
+    filter: saturate(1.04) contrast(1.02);
+  }
+
+  .work-more-card:hover {
+    transform: translateY(-6px);
+    background: var(--blue-soft);
+    box-shadow: 0 24px 52px rgba(27, 42, 74, 0.2);
+  }
+
+  .work-more-card:hover .work-more-arrow {
+    transform: translate(5px, -5px) rotate(4deg);
+  }
+
+  .catalog-price-row:hover,
+  .price-list div:hover,
+  .more-prices div:hover {
+    padding-inline: 10px;
+    color: var(--blue);
+    background: rgba(27, 42, 74, 0.035);
+  }
+
+  .contact-form input:hover,
+  .contact-form select:hover,
+  .contact-form textarea:hover {
+    border-color: rgba(255, 255, 255, 0.42);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .motion-reveal,
+  .motion-reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

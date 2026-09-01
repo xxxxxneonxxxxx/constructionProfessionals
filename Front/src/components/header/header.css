@@ -1,0 +1,53 @@
+/* Шапка и переключатель аудитории */
+
+.site-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.1);
+  background: rgba(247, 248, 250, 0.98);
+}
+.header-row {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--yellow);
+  font-size: 27px;
+  font-weight: 800;
+}
+.logo b,
+.logo small {
+  display: block;
+  line-height: 1.05;
+}
+.logo b {
+  font-size: 19px;
+  letter-spacing: 0.08em;
+}
+.logo small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+.header-phone {
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+}

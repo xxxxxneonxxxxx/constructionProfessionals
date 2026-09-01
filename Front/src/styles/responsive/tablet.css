@@ -1,0 +1,132 @@
+/* Планшеты */
+
+@media (max-width: 1024px) {
+  .container {
+    width: min(calc(100% - 48px), var(--container));
+  }
+  .project-list.is-loading {
+    min-height: 1200px;
+  }
+  .header-phone {
+    display: none;
+  }
+  .hero {
+    padding: 30px 0 34px;
+  }
+  .hero-grid {
+    min-height: 0;
+    display: block;
+  }
+  .consumer-page .hero-grid {
+    min-height: 0;
+  }
+  .hero-copy {
+    min-height: 0;
+    padding: 0;
+  }
+  .hero-media {
+    display: none;
+  }
+  h1 {
+    max-width: 690px;
+    font-size: clamp(54px, 8.5vw, 72px);
+  }
+  .hero-facts {
+    margin-top: 30px;
+    padding-top: 18px;
+  }
+  .section {
+    padding: 40px 0;
+  }
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .section-heading > p {
+    max-width: 560px;
+  }
+  .advantages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .advantages-grid article {
+    min-height: 200px;
+    padding: 20px;
+  }
+  .advantages-grid h3 {
+    min-height: 24px;
+    margin-top: 24px;
+  }
+  .advantages-grid p {
+    min-height: 43px;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .direction-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .expert-card {
+    min-height: 200px;
+  }
+  .expert-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 200px;
+  }
+  .carousel-buttons {
+    display: none;
+  }
+  .work-card {
+    flex-basis: 72%;
+  }
+  .work-card img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .project-slide img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .work-more-card {
+    aspect-ratio: 16 / 10;
+  }
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 30px;
+  }
+  .contact-form {
+    width: 100%;
+  }
+  .subpage-hero {
+    padding: 34px 0 26px;
+  }
+  .back-link {
+    margin-bottom: 24px;
+  }
+  .project-case {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+  .project-case:nth-child(even) .project-gallery {
+    order: 0;
+  }
+  .project-details {
+    padding: 14px 4px 6px;
+  }
+  .subpage-contact-card {
+    width: min(calc(100% - 48px), var(--container));
+  }
+  .project-image-controls {
+    display: none;
+  }
+  .project-carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x;
+  }
+}

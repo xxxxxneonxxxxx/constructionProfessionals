@@ -1,0 +1,49 @@
+/* ========================================================================== */
+/* Общие токены и стили клиентской версии                              */
+/* ========================================================================== */
+
+:root {
+  --ink: #1b2a4a;
+  --muted: #687386;
+  --paper: #f7f8fa;
+  --white: #ffffff;
+  --line: #dce1e7;
+  --blue: #1b2a4a;
+  --blue-soft: #293a5f;
+  --yellow: #ffc107;
+  --yellow-dark: #c79200;
+  --reviews: #e9ecef;
+  --radius: 20px;
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Manrope", Arial, sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+.container {
+  width: min(calc(100% - 64px), var(--container));
+  margin-inline: auto;
+}

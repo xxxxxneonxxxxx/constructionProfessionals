@@ -1,0 +1,6 @@
+# Только для локальной разработки. Скопируйте в .dev.vars.
+# .dev.vars исключён из Git и не должен публиковаться.
+
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+TELEGRAM_BOT_TOKEN=REPLACE_WITH_BOT_TOKEN
+LEAD_HASH_SECRET=REPLACE_WITH_LONG_RANDOM_SECRET

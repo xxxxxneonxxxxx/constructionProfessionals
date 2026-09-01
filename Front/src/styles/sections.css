@@ -1,0 +1,36 @@
+/* Общие секции */
+
+.section {
+  padding: 58px 0;
+}
+.section-dark {
+  color: var(--white);
+  background: var(--blue);
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+.section-heading > div {
+  min-width: 0;
+}
+.section-heading h2 {
+  max-width: 790px;
+  margin-bottom: 0;
+  font-size: clamp(38px, 4.3vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+.section-heading > p {
+  max-width: 410px;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.light-heading > p {
+  color: #cbd3e2;
+}

@@ -1,0 +1,48 @@
+/* Десктоп */
+
+@media (min-width: 1025px) {
+  .work-card {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+  .featured-carousel-wrap .work-card {
+    flex-basis: 33%;
+  }
+  .work-card img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .work-more-card {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+  .featured-carousel-wrap .work-more-card {
+    flex-basis: 33%;
+    height: auto;
+    align-self: flex-start;
+    aspect-ratio: 16 / 10;
+    padding: 22px;
+  }
+  .featured-carousel-wrap .work-more-card .work-more-arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+  .featured-carousel-wrap .work-more-card strong {
+    font-size: 21px;
+  }
+  .featured-carousel-wrap .work-more-card small {
+    font-size: 11px;
+  }
+  .project-case {
+    grid-template-columns: minmax(0, 0.88fr) minmax(380px, 1.12fr);
+  }
+  .project-carousel {
+    overflow: hidden;
+    scroll-snap-type: none;
+  }
+  .project-slide img {
+    height: clamp(280px, 25vw, 360px);
+    aspect-ratio: auto;
+  }
+}

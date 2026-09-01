@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{description}}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{canonicalPath}}" />
+    <title>{{title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{assetBase}}/css/main.css?v=25" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </head>
+  <body class="{{bodyClass}}"{{bodyData}}>
+    {{header}}
+    {{content}}
+    {{footer}}
+    <a
+      class="floating-call"
+      href="{{phoneHref}}"
+      aria-label="Позвонить мастеру"
+    ><span aria-hidden="true">☎</span><b>Позвонить</b></a>
+    <script src="/config.js?v=1"></script>
+    {{scripts}}
+  </body>
+</html>

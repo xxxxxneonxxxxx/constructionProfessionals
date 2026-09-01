@@ -1,0 +1,25 @@
+[
+  {
+    "id": "elektrika-consumer-object-01",
+    "type": "Частный дом",
+    "title": "Монтаж освещения в деревянном доме",
+    "summary": "Подготовили линию и установили временное освещение на этапе внутренних работ.",
+    "featured": true,
+    "images": [
+      { "src": "/elektrika/assets/images/works/montazh-osveshcheniya-derevyannyy-dom-tomsk.jpg", "alt": "Монтаж освещения на деревянном потолке частного дома в Томске" }
+    ],
+    "workItems": ["Подготовили линию освещения", "Закрепили кабель по деревянным конструкциям", "Подключили и проверили светильник"]
+  },
+  {
+    "id": "elektrika-consumer-object-02",
+    "type": "Частный дом",
+    "title": "Полная разводка электрики в доме",
+    "summary": "Проложили и закрепили кабельные линии по потолку деревянного дома перед чистовой отделкой.",
+    "featured": true,
+    "images": [
+      { "src": "/elektrika/assets/images/works/razvodka-elektriki-potolok-derevyannyy-dom-tomsk.jpg", "alt": "Разводка кабельных линий по потолку деревянного дома в Томске" },
+      { "src": "/elektrika/assets/images/works/kreplenie-kabelnykh-liniy-chastnyy-dom-tomsk.jpg", "alt": "Аккуратно закреплённые кабельные линии в частном доме в Томске" }
+    ],
+    "workItems": ["Развели кабельные линии по помещениям", "Собрали трассы по единому маршруту", "Подготовили выводы под розетки и освещение", "Проверили и промаркировали линии"]
+  }
+]

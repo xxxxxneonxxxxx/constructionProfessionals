@@ -1,0 +1,88 @@
+/* ========================================================================== */
+/* Дополнения и переопределения для бизнес-версии                       */
+/* Файл подключается после clients.css.                                  */
+/* ========================================================================== */
+
+/* Карусель работ */
+
+.business-page .work-card {
+  flex-basis: calc((100% - 36px) / 3);
+}
+.business-page .featured-carousel-wrap .work-card {
+  flex-basis: 33%;
+}
+.business-page .featured-carousel-wrap .work-more-card {
+  flex-basis: 33%;
+}
+
+/* Форма заявки для бизнеса */
+
+.business-contact-card {
+  align-items: center;
+}
+
+.business-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.business-form label {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.business-form label span {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  color: #d7deeb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.business-form input,
+.business-form select,
+.business-form textarea {
+  width: 100%;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 13px;
+  outline: none;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.075);
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.business-form input,
+.business-form select {
+  height: 58px;
+}
+
+.business-form textarea {
+  min-height: 116px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  resize: vertical;
+}
+
+.business-form select {
+  color-scheme: dark;
+}
+
+.business-form input::placeholder,
+.business-form textarea::placeholder {
+  color: #aeb9cc;
+}
+
+.business-form input:focus,
+.business-form select:focus,
+.business-form textarea:focus {
+  border-color: var(--yellow);
+}
+
+.business-form .field-wide {
+  grid-column: 1 / -1;
+}

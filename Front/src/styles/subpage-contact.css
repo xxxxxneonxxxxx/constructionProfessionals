@@ -1,0 +1,7 @@
+.subpage-contact-card {
+  width: min(calc(100% - 64px), var(--container));
+}
+.subpage-lead-form .form-status a {
+  color: var(--yellow);
+  text-decoration: underline;
+}

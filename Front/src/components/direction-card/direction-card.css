@@ -1,0 +1,79 @@
+/* Направления ремонта на главной */
+
+.direction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.direction-card {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 18px 45px rgba(27, 42, 74, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.direction-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  height: 7px;
+  border-radius: 8px 0 0;
+  background: var(--yellow);
+  content: "";
+}
+.direction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 54px rgba(27, 42, 74, 0.12);
+}
+.direction-card > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blue);
+  background: var(--yellow);
+  font-size: 12px;
+  font-weight: 800;
+}
+.direction-card p {
+  margin: 34px 0 8px;
+  color: var(--yellow-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.direction-card h3 {
+  min-height: 76px;
+  margin-bottom: 12px;
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.direction-card small {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.direction-card b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 14px;
+}
+.direction-card i {
+  color: var(--yellow-dark);
+  font-size: 20px;
+  font-style: normal;
+}

@@ -1,0 +1,71 @@
+/* Подвал и плавающая кнопка */
+
+.footer {
+  padding: 30px 0 86px;
+  color: var(--white);
+  background: #111a2d;
+}
+.footer-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.footer-row p {
+  margin: 0 auto 0 0;
+  color: #9eabc1;
+  font-size: 12px;
+}
+.footer-row > a {
+  font-size: 14px;
+  font-weight: 800;
+}
+.footer-row .footer-audience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #b9c4d6;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 0.18s ease;
+}
+.footer-audience-link span {
+  color: var(--yellow);
+  font-size: 16px;
+}
+.footer-audience-link:hover {
+  color: var(--white);
+}
+.footer-logo {
+  margin: 0;
+}
+.footer-logo small {
+  color: #9eabc1;
+}
+.floating-call {
+  position: fixed;
+  z-index: 70;
+  right: 18px;
+  bottom: 18px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 17px 0 8px;
+  border: 1px solid rgba(27, 42, 74, 0.16);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--yellow);
+  box-shadow: 0 10px 28px rgba(27, 42, 74, 0.18);
+}
+.floating-call span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.48);
+}
+.floating-call b {
+  font-size: 13px;
+}

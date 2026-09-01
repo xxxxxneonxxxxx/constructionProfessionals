@@ -1,0 +1,21 @@
+/* Адаптивность */
+
+@media (max-width: 1024px) {
+  .business-page .work-card {
+    flex-basis: 72%;
+  }
+}
+
+@media (max-width: 600px) {
+  .business-page .work-card {
+    flex-basis: 88%;
+  }
+
+  .business-form {
+    grid-template-columns: 1fr;
+  }
+
+  .business-form .field-wide {
+    grid-column: auto;
+  }
+}

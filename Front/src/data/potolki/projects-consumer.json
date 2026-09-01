@@ -1,0 +1,27 @@
+[
+  {
+    "id": "potolki-consumer-object-01",
+    "type": "Квартира",
+    "title": "Замена потолка с трещинами",
+    "summary": "Демонтировали повреждённое покрытие и установили ровный натяжной потолок с сохранением освещения.",
+    "featured": true,
+    "images": [
+      { "src": "/potolki/assets/images/works/potolok-s-treshchinami-do-remonta-tomsk.png", "alt": "Потолок с трещинами до ремонта в Томске", "stage": "before" },
+      { "src": "/potolki/assets/images/works/natyazhnoy-potolok-posle-remonta-tomsk.png", "alt": "Ровный натяжной потолок после ремонта в Томске", "stage": "after" },
+      { "src": "/potolki/assets/images/works/natyazhnoy-potolok-s-osveshcheniem-tomsk.png", "alt": "Натяжной потолок и освещение после завершения работ в Томске", "stage": "after" }
+    ],
+    "workItems": ["Демонтировали повреждённое покрытие", "Подготовили крепление по периметру", "Установили новое полотно", "Вернули и проверили освещение"]
+  },
+  {
+    "id": "potolki-consumer-object-03",
+    "type": "Квартира",
+    "title": "Замена потолка после протечки",
+    "summary": "Убрали повреждённый влагой потолок и установили новое полотно без пятен и провисаний.",
+    "featured": true,
+    "images": [
+      { "src": "/potolki/assets/images/works/potolok-posle-protechki-do-remonta-tomsk.png", "alt": "Следы протечки и повреждение потолка до ремонта в Томске", "stage": "before" },
+      { "src": "/potolki/assets/images/works/natyazhnoy-potolok-posle-protechki-tomsk.png", "alt": "Новый натяжной потолок после устранения повреждений в Томске", "stage": "after" }
+    ],
+    "workItems": ["Демонтировали повреждённое полотно", "Проверили основание после протечки", "Установили новый потолок", "Проверили натяжение и примыкания"]
+  }
+]

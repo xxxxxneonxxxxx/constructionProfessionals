@@ -1,0 +1,42 @@
+/* Цены и отзывы */
+
+.price-list {
+  border-top: 1px solid var(--ink);
+}
+.price-list div,
+.more-prices div {
+  min-height: 66px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 18px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+.price-list b,
+.more-prices b {
+  color: var(--blue);
+  white-space: nowrap;
+}
+.price-list small,
+.more-prices small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.all-prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 2px;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+.all-prices span {
+  color: var(--yellow-dark);
+}

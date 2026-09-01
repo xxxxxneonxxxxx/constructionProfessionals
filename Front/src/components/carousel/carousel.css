@@ -1,0 +1,183 @@
+/* Карусели и примеры работ */
+
+.works-section {
+  background: var(--white);
+}
+.carousel-buttons {
+  display: flex;
+  gap: 8px;
+}
+.slider-button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+.featured-carousel-wrap {
+  position: relative;
+}
+.featured-carousel-controls {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px 54px;
+  pointer-events: none;
+}
+.featured-carousel-controls .slider-button {
+  width: 54px;
+  height: 94px;
+  border: 0;
+  border-radius: 0;
+  color: var(--yellow);
+  background: transparent;
+  box-shadow: none;
+  font:
+    700 86px/1 Arial,
+    sans-serif;
+  padding: 0 0 12px;
+  pointer-events: auto;
+  text-shadow: 0 2px 9px rgba(27, 42, 74, 0.32);
+  transition: transform 0.18s ease;
+}
+.featured-carousel-controls .slider-button:hover {
+  color: var(--yellow);
+  background: transparent;
+  transform: scale(1.06);
+}
+.featured-carousel-controls .slider-button:active {
+  transform: scale(0.98);
+}
+.featured-carousel-controls .slider-button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel:focus-visible {
+  outline: 2px solid var(--yellow-dark);
+  outline-offset: 5px;
+}
+.carousel-track {
+  display: flex;
+  gap: 18px;
+}
+.work-card {
+  flex: 0 0 calc((100% - 18px) / 2);
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.work-card-image {
+  position: relative;
+}
+.work-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.image-stage {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  min-width: 74px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  color: var(--white);
+  background: rgba(27, 42, 74, 0.9);
+  box-shadow: 0 8px 22px rgba(27, 42, 74, 0.2);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+.image-stage-after {
+  color: var(--blue);
+  background: rgba(255, 193, 7, 0.94);
+}
+.work-card .image-stage {
+  color: var(--white);
+  font-size: 13px;
+}
+.work-card .image-stage-after {
+  color: var(--blue);
+}
+.work-card figcaption {
+  min-height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 15px 2px 0;
+}
+.work-card span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.work-card b {
+  font-size: 14px;
+  text-align: right;
+}
+.work-more-card {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  border-radius: var(--radius);
+  color: var(--white);
+  background: var(--blue);
+}
+.work-more-card .work-more-arrow {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin: 0 0 auto auto;
+  border-radius: 50%;
+  color: var(--blue);
+  background: var(--yellow);
+  font-size: 26px;
+}
+.work-more-card strong {
+  max-width: 260px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  line-height: 1.15;
+}
+.work-more-card small {
+  max-width: 280px;
+  color: #cbd3e2;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+  .image-stage {
+    top: 10px;
+    left: 10px;
+    min-width: 62px;
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,17 @@
+.DS_Store
+**/.DS_Store
+
+**/node_modules/
+**/.wrangler/
+
+**/.dev.vars
+**/.env
+**/.env.*
+!**/.env.example
+!**/.dev.vars.example
+
+Front/dist/
+Front/.backup-*/
+
+coverage/
+*.log

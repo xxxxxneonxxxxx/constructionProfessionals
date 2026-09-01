@@ -1,0 +1,43 @@
+.reviews-section {
+  background: var(--reviews);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 16px;
+}
+.review {
+  min-width: 0;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.78);
+}
+.review.featured {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+}
+.stars {
+  margin-bottom: 22px;
+  color: var(--yellow-dark);
+  letter-spacing: 0.12em;
+}
+.review blockquote {
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.featured blockquote {
+  font-size: 25px;
+  line-height: 1.45;
+}
+.review footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+.review footer span {
+  color: var(--muted);
+  font-size: 12px;
+}

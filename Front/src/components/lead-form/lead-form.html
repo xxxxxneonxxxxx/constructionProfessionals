@@ -1,0 +1,36 @@
+<section class="section contact-section" id="contact">
+  <div class="container contact-card {{contactCardClass}}">
+    <div>
+      <p class="eyebrow" data-contact-eyebrow>{{leadEyebrow}}</p>
+      <h2 data-contact-title>{{leadTitle}}</h2>
+      <p data-contact-copy>{{leadCopy}}</p>
+    </div>
+    <form class="contact-form {{formClass}}" {{formAttributes}}>
+      <input type="hidden" name="audience" value="{{audience}}" />
+      <input type="hidden" name="sourcePage" value="{{sourcePage}}" />
+      <label class="form-trap" aria-hidden="true">
+        <span>Не заполняйте это поле</span>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </label>
+      {{leadFields}}
+      <label class="consent-field {{wideClass}}">
+        <input type="checkbox" name="consent" required />
+        <span>Согласен на обработку персональных данных и принимаю пользовательское соглашение</span>
+      </label>
+      <div class="turnstile-field {{wideClass}}">
+        <div
+          class="cf-turnstile"
+          data-sitekey="{{turnstileSiteKey}}"
+          data-action="lead"
+          data-theme="dark"
+          data-size="flexible"
+          data-appearance="always"
+        ></div>
+      </div>
+      <button class="button button-accent {{wideClass}}" type="submit" data-contact-button>
+        {{leadButton}}
+      </button>
+      <p class="form-status {{wideClass}}" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

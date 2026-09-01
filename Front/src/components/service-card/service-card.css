@@ -1,0 +1,66 @@
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.expert-card {
+  position: relative;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 18px 45px rgba(27, 42, 74, 0.06);
+}
+.expert-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 7px;
+  content: "";
+  border-radius: 8px 0 0 0;
+  background: var(--yellow);
+}
+.expert-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+}
+.expert-top strong {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.expert-card p {
+  margin-bottom: 24px;
+  color: var(--yellow-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.expert-card h3 {
+  margin-bottom: 8px;
+  font-size: 34px;
+}
+.expert-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.expert-card li {
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--paper);
+  font-size: 12px;
+}
