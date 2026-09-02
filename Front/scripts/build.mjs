@@ -1,4 +1,5 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -41,6 +42,9 @@ async function bundleImports(entryPath, pattern) {
 
 const bundleCss = (entryPath) =>
   bundleImports(entryPath, /@import\s+url\(["'](.+?)["']\);/g);
+
+const contentVersion = (content) =>
+  createHash("sha256").update(content).digest("hex").slice(0, 10);
 
 async function bundleJavaScript(entryPath) {
   const code = await bundleImports(
@@ -667,6 +671,9 @@ async function build() {
     bundleJavaScript(join(sourceRoot, "scripts", "main.js")),
     bundleJavaScript(join(sourceRoot, "scripts", "catalog.js")),
   ]);
+  const cssVersion = contentVersion(cssBundle);
+  const mainVersion = contentVersion(mainBundle);
+  const catalogVersion = contentVersion(catalogBundle);
   await mkdir(join(outputRoot, "elektrika", "assets", "css"), { recursive: true });
   await mkdir(join(outputRoot, "elektrika", "assets", "js"), { recursive: true });
   await Promise.all([
@@ -744,14 +751,15 @@ async function build() {
       bodyClass: page.bodyClass,
       bodyData: page.bodyData || "",
       assetBase: "/elektrika/assets",
+      cssVersion,
       phoneHref: company.phoneHref,
       header: render(headerTemplate, audienceContext),
       content,
       footer: render(footerTemplate, audienceContext),
       scripts: [
-        '<script src="/elektrika/assets/js/main.js?v=6"></script>',
+        `<script src="/elektrika/assets/js/main.js?v=${mainVersion}"></script>`,
         page.catalog
-          ? '<script src="/elektrika/assets/js/catalog.js?v=5"></script>'
+          ? `<script src="/elektrika/assets/js/catalog.js?v=${catalogVersion}"></script>`
           : "",
       ].join("\n    "),
     });
@@ -877,13 +885,14 @@ async function build() {
           bodyClass: `trade-page ${isCatalog ? `subpage ${page.kind === "works" ? "projects-page" : "prices-page"} ` : ""}${isBusiness ? "business-page" : "consumer-page"}`,
           bodyData: ` data-audience="${audience}" data-section-base="/${section.slug}"${isCatalog ? ` data-subpage="${page.kind}"` : ""}`,
           assetBase: "/elektrika/assets",
+          cssVersion,
           phoneHref: company.phoneHref,
           header: render(headerTemplate, headerContext),
           content: pageContent,
           footer: render(footerTemplate, headerContext),
           scripts: [
-            '<script src="/elektrika/assets/js/main.js?v=6"></script>',
-            isCatalog ? '<script src="/elektrika/assets/js/catalog.js?v=5"></script>' : "",
+            `<script src="/elektrika/assets/js/main.js?v=${mainVersion}"></script>`,
+            isCatalog ? `<script src="/elektrika/assets/js/catalog.js?v=${catalogVersion}"></script>` : "",
           ].join("\n    "),
         });
         const destination = join(sectionRoot, page.output);
@@ -1033,11 +1042,12 @@ async function build() {
       bodyClass: `home-page ${isBusiness ? "business-page" : "consumer-page"}`,
       bodyData: ` data-audience="${page.audience}" data-section-base=""`,
       assetBase: "/elektrika/assets",
+      cssVersion,
       phoneHref: company.phoneHref,
       header: render(headerTemplate, headerContext),
       content,
       footer: render(footerTemplate, headerContext),
-      scripts: '<script src="/elektrika/assets/js/main.js?v=6"></script>',
+      scripts: `<script src="/elektrika/assets/js/main.js?v=${mainVersion}"></script>`,
     });
     const destination = join(outputRoot, page.output);
     await mkdir(dirname(destination), { recursive: true });
@@ -1095,11 +1105,12 @@ async function build() {
       bodyClass: `home-works-page subpage projects-page ${isBusiness ? "business-page" : "consumer-page"}`,
       bodyData: ` data-audience="${page.audience}" data-section-base="" data-subpage="main-works"`,
       assetBase: "/elektrika/assets",
+      cssVersion,
       phoneHref: company.phoneHref,
       header: render(headerTemplate, headerContext),
       content,
       footer: render(footerTemplate, headerContext),
-      scripts: '<script src="/elektrika/assets/js/main.js?v=6"></script>\n    <script src="/elektrika/assets/js/catalog.js?v=6"></script>',
+      scripts: `<script src="/elektrika/assets/js/main.js?v=${mainVersion}"></script>\n    <script src="/elektrika/assets/js/catalog.js?v=${catalogVersion}"></script>`,
     });
     const destination = join(outputRoot, output);
     await mkdir(dirname(destination), { recursive: true });
