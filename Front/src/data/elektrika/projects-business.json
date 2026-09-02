@@ -6,8 +6,8 @@
     "summary": "Смонтировали открытые кабельные трассы и распределительные коробки для инженерных систем объекта.",
     "featured": true,
     "images": [
-      { "src": "/elektrika/assets/images/works/kabelnye-lotki-provodka-kommercheskoe-pomeshchenie-tomsk.jpg", "alt": "Кабельные лотки и открытая проводка в коммерческом помещении в Томске" },
-      { "src": "/elektrika/assets/images/works/montazh-raspredelitelnoy-korobki-kommercheskiy-obekt-tomsk.jpg", "alt": "Монтаж распределительной коробки на коммерческом объекте в Томске" }
+      { "src": "/elektrika/assets/images/works/kabelnye-lotki-provodka-kommercheskoe-pomeshchenie-tomsk.webp", "alt": "Кабельные лотки и открытая проводка в коммерческом помещении в Томске" },
+      { "src": "/elektrika/assets/images/works/montazh-raspredelitelnoy-korobki-kommercheskiy-obekt-tomsk.webp", "alt": "Монтаж распределительной коробки на коммерческом объекте в Томске" }
     ],
     "workItems": ["Смонтировали металлические кабельные лотки", "Проложили силовые и слаботочные линии", "Установили распределительные коробки", "Проверили и промаркировали подключения"]
   }

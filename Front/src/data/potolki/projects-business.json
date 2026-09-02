@@ -6,8 +6,8 @@
     "summary": "Закрыли открытое перекрытие ровным потолком и сохранили линейное освещение.",
     "featured": true,
     "images": [
-      { "src": "/potolki/assets/images/works/montazh-potolka-kommercheskoe-pomeshchenie-do-tomsk.png", "alt": "Открытое бетонное перекрытие до монтажа потолка в Томске", "stage": "before" },
-      { "src": "/potolki/assets/images/works/podvesnoy-potolok-lineynoe-osveshchenie-tomsk.png", "alt": "Готовый потолок с линейным освещением в коммерческом помещении в Томске", "stage": "after" }
+      { "src": "/potolki/assets/images/works/montazh-potolka-kommercheskoe-pomeshchenie-do-tomsk.webp", "alt": "Открытое бетонное перекрытие до монтажа потолка в Томске", "stage": "before" },
+      { "src": "/potolki/assets/images/works/podvesnoy-potolok-lineynoe-osveshchenie-tomsk.webp", "alt": "Готовый потолок с линейным освещением в коммерческом помещении в Томске", "stage": "after" }
     ],
     "workItems": ["Подготовили помещение к монтажу", "Смонтировали потолочную систему", "Сохранили схему линейного освещения", "Проверили полотно и примыкания"]
   }

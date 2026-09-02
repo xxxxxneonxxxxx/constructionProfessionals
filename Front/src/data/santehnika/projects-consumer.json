@@ -7,15 +7,15 @@
     "featured": true,
     "images": [
       {
-        "src": "/santehnika/assets/images/works/razvodka-vody-kanalizatsii-vannaya-tomsk.jpg",
+        "src": "/santehnika/assets/images/works/razvodka-vody-kanalizatsii-vannaya-tomsk.webp",
         "alt": "Черновая разводка водоснабжения и канализации в ванной комнате в Томске"
       },
       {
-        "src": "/santehnika/assets/images/works/podklyucheniya-i-dushevoy-lotok-tomsk.jpg",
+        "src": "/santehnika/assets/images/works/podklyucheniya-i-dushevoy-lotok-tomsk.webp",
         "alt": "Точки подключения сантехники и линейный душевой лоток в ванной комнате"
       },
       {
-        "src": "/santehnika/assets/images/works/installyatsiya-i-uzel-vodosnabzheniya-tomsk.jpg",
+        "src": "/santehnika/assets/images/works/installyatsiya-i-uzel-vodosnabzheniya-tomsk.webp",
         "alt": "Инсталляция подвесного унитаза и узел водоснабжения с манометрами"
       }
     ],
@@ -34,8 +34,8 @@
     "summary": "Собрали инженерный узел и закрыли коммуникации влагостойкими панелями с доступом для обслуживания.",
     "featured": true,
     "images": [
-      { "src": "/santehnika/assets/images/works/skrytye-santehnicheskie-kommunikatsii-tomsk.jpg", "alt": "Скрытые сантехнические коммуникации за панелями в Томске" },
-      { "src": "/santehnika/assets/images/works/inzhenernyy-uzel-montazhnaya-nisha-tomsk.jpg", "alt": "Инженерный узел сантехники в монтажной нише в Томске" }
+      { "src": "/santehnika/assets/images/works/skrytye-santehnicheskie-kommunikatsii-tomsk.webp", "alt": "Скрытые сантехнические коммуникации за панелями в Томске" },
+      { "src": "/santehnika/assets/images/works/inzhenernyy-uzel-montazhnaya-nisha-tomsk.webp", "alt": "Инженерный узел сантехники в монтажной нише в Томске" }
     ],
     "workItems": ["Собрали скрытые линии водоснабжения", "Смонтировали инсталляцию и узел подключения", "Подготовили ревизионный доступ", "Закрыли коммуникации панелями под отделку"]
   }

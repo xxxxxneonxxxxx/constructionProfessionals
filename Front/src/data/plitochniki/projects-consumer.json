@@ -7,12 +7,12 @@
     "featured": true,
     "images": [
       {
-        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-do-remonta-tomsk.png",
+        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-do-remonta-tomsk.webp",
         "alt": "Ванная комната до укладки плитки в Томске",
         "stage": "before"
       },
       {
-        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-posle-remonta-tomsk.png",
+        "src": "/plitochniki/assets/images/ukladka-plitki-vannaya-posle-remonta-tomsk.webp",
         "alt": "Ванная комната после укладки плитки в Томске",
         "stage": "after"
       }
